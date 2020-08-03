@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/AttractedBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/AttractingBody.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/PilotedShip.tscn" type="PackedScene" id=3]
 
 [node name="space01" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -2.31402, -1.53687 )
+[node name="AttractedBody" parent="." instance=ExtResource( 1 )]
+position = Vector2( -100.127, -40.684 )
+path_to_gravityCenter = NodePath("../AttractingBody")
+
+[node name="Ship" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -112.078 )
+path_to_gravityCenter = NodePath("../AttractingBody")
+speed = 100
+
+[node name="Camera2D" type="Camera2D" parent="Ship"]
+scale = Vector2( 1, 1 )
 rotating = true
 current = true
 zoom = Vector2( 0.5, 0.5 )
@@ -16,11 +26,18 @@ drag_margin_top = 1.0
 drag_margin_right = 0.87
 drag_margin_bottom = 1.0
 
-[node name="AttractedBody" parent="." instance=ExtResource( 1 )]
-position = Vector2( -46.1547, -43.7406 )
-path_to_gravityCenter = NodePath("../AttractingBody")
-speed = 30
-
 [node name="AttractingBody" parent="." instance=ExtResource( 2 )]
 position = Vector2( -0.328148, -1.29687 )
+scale = Vector2( 15, 15 )
 acceleration = 40
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2( 0, -112.078 )
+scale = Vector2( 1, 1 )
+rotating = true
+zoom = Vector2( 0.5, 0.5 )
+smoothing_speed = 2.0
+drag_margin_left = 0.46
+drag_margin_top = 1.0
+drag_margin_right = 0.87
+drag_margin_bottom = 1.0

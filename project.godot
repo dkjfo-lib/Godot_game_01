@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "AttractingBody",
 "language": "GDScript",
 "path": "res://src/AttractingBody.gd"
+}, {
+"base": "AttractedBody",
+"class": "PilotedShip",
+"language": "GDScript",
+"path": "res://src/PilotedShip.gd"
 } ]
 _global_script_class_icons={
 "AttractedBody": "",
-"AttractingBody": ""
+"AttractingBody": "",
+"PilotedShip": ""
 }
 
 [application]

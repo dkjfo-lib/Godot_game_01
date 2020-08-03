@@ -5,21 +5,21 @@ class_name AttractedBody
 export var path_to_gravityCenter: NodePath
 onready var gravityCenter : AttractingBody = get_node(path_to_gravityCenter)
 
-export var speed: = 5
 var _velocity: = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
-	var normal = Vector2.UP
-	var add_velocity = Vector2.ZERO
+	my_physics_process(delta)
+	
+func my_physics_process(delta: float) -> void:
 	if gravityCenter != null:
-		normal = position.direction_to(gravityCenter.position)
-		add_velocity += gravityCenter.acceleration * delta * normal
+		var normal = position.direction_to(gravityCenter.position)
+		var gravity = getVelocity_Gravity(delta)
 		rotation = position.angle_to_point(gravityCenter.position)+PI/2
-	var input = getDirection().rotated(rotation).normalized()
-	add_velocity += input * delta * speed
-	_velocity = move_and_slide(add_velocity + _velocity, normal)
-
-func getDirection() -> Vector2:
-	return Vector2(
-		Input.get_action_strength("move_right")-Input.get_action_strength("move_left"),
-		Input.get_action_strength("move_down")-Input.get_action_strength("move_up"))
+		_velocity = move_and_slide(gravity + _velocity, normal)
+	
+	
+	
+func getVelocity_Gravity(delta: float) -> Vector2:
+		var gravityAxis = position.direction_to(gravityCenter.position)
+		return gravityCenter.acceleration * delta * gravityAxis
+	
