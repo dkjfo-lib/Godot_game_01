@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "PilotedShip",
 "language": "GDScript",
 "path": "res://src/PilotedShip.gd"
+}, {
+"base": "Area2D",
+"class": "collectable",
+"language": "GDScript",
+"path": "res://src/collectable.gd"
 } ]
 _global_script_class_icons={
 "AttractedBody": "",
 "AttractingBody": "",
-"PilotedShip": ""
+"PilotedShip": "",
+"collectable": ""
 }
 
 [application]
@@ -35,6 +41,10 @@ _global_script_class_icons={
 config/name="Spheres"
 run/main_scene="res://scenes/space01.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+player_score="*res://src/Autoload/score.gd"
 
 [display]
 
