@@ -1,16 +1,17 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://import/img-placeholders/boxWhite.jpg" type="Texture" id=1]
-[ext_resource path="res://src/AttractedBody.gd" type="Script" id=2]
+[ext_resource path="res://src/aerodinamicBody.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 0.464059, 0.455082 )
 
-[node name="AttractedBody" type="KinematicBody2D"]
+[node name="aerodinamicBody" type="KinematicBody2D"]
 position = Vector2( 0, -0.396851 )
 scale = Vector2( 10, 10 )
+collision_layer = 4
+collision_mask = 69
 script = ExtResource( 2 )
-speed = 1500
 
 [node name="boxWhite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

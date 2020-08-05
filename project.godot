@@ -19,10 +19,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/AttractingBody.gd"
 }, {
-"base": "AttractedBody",
+"base": "Area2D",
+"class": "GasCloud",
+"language": "GDScript",
+"path": "res://src/GasCloud.gd"
+}, {
+"base": "aerodinamicBody",
 "class": "PilotedShip",
 "language": "GDScript",
 "path": "res://src/PilotedShip.gd"
+}, {
+"base": "AttractingBody",
+"class": "Planet",
+"language": "GDScript",
+"path": "res://src/Planet.gd"
+}, {
+"base": "AttractedBody",
+"class": "aerodinamicBody",
+"language": "GDScript",
+"path": "res://src/aerodinamicBody.gd"
 }, {
 "base": "Area2D",
 "class": "collectable",
@@ -32,14 +47,17 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AttractedBody": "",
 "AttractingBody": "",
+"GasCloud": "",
 "PilotedShip": "",
+"Planet": "",
+"aerodinamicBody": "",
 "collectable": ""
 }
 
 [application]
 
 config/name="Spheres"
-run/main_scene="res://scenes/space01.tscn"
+run/main_scene="res://scenes_game/space01.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -76,6 +94,13 @@ move_down={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_3="other game objects"
+2d_physics/layer_5="items & boosts"
+2d_physics/layer_7="stationary bodies"
 
 [rendering]
 
