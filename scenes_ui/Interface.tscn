@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes_ui/Counter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes_ui/UI.gd" type="Script" id=2]
+
+[node name="Interface" type="CanvasLayer"]
+layer = 128
+follow_viewport_enable = true
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FPS Counter" parent="VBoxContainer" instance=ExtResource( 1 )]
+param_name = "FPS"
+
+[node name="Fuel Counter" parent="VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 54.0
+margin_bottom = 104.0
+param_name = "FUEL"
+
+[node name="Score Counter" parent="VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 108.0
+margin_bottom = 158.0
+param_name = "SCORE"

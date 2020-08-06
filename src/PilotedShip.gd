@@ -12,7 +12,6 @@ func get_fuel() -> float:
 	return fuel
 
 func my_physics_process(delta: float) -> void:
-	var normal = Vector2.UP
 	var add_velocity = Vector2.ZERO
 	var gravity: = get_result_gravity(delta)
 	add_velocity += gravity

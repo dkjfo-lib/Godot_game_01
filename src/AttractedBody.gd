@@ -17,7 +17,6 @@ func my_physics_process(delta: float) -> void:
 	var gravForce: = get_result_gravity(delta)
 	rotation = position.angle_to_point(position + gravForce)+PI/2
 	_velocity = move_and_slide(gravForce + _velocity, -gravForce)
-	#print(Performance.get_monitor(0))
 	
 	
 func get_result_gravity(delta: float) -> Vector2:

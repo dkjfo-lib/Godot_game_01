@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://graphic/theme_default.tres" type="Theme" id=1]
+[ext_resource path="res://import/img-placeholders/boxWhite.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes_ui/Counter.gd" type="Script" id=3]
+
+[node name="Counter" type="TextureRect"]
+self_modulate = Color( 0.286275, 0.286275, 0.286275, 1 )
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+theme = ExtResource( 1 )
+texture = ExtResource( 2 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+param_name = "name"
+param_value = "value"
+
+[node name="Label-count" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -17.5
+margin_bottom = 17.5
+text = "value"
+align = 2
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label-name" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -17.5
+margin_right = 64.0
+margin_bottom = 17.5
+text = "name"
+__meta__ = {
+"_edit_use_anchors_": false
+}

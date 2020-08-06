@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes_items/PilotedShip.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes_ui/Interface.tscn" type="PackedScene" id=7]
+
+[node name="space01" type="Node2D"]
+
+[node name="gravBodies" type="Node" parent="."]
+
+[node name="Ship" parent="." instance=ExtResource( 3 )]
+aerodinamic_coefficient = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="Ship"]
+rotating = true
+current = true
+zoom = Vector2( 0.5, 0.5 )
+smoothing_speed = 2.0
+drag_margin_left = 0.46
+drag_margin_top = 1.0
+drag_margin_right = 0.87
+drag_margin_bottom = 1.0
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2( 0, -112.078 )
+rotating = true
+zoom = Vector2( 0.5, 0.5 )
+smoothing_speed = 2.0
+drag_margin_left = 0.46
+drag_margin_top = 1.0
+drag_margin_right = 0.87
+drag_margin_bottom = 1.0
+
+[node name="Interface" parent="." instance=ExtResource( 7 )]
+follow_viewport_enable = false
